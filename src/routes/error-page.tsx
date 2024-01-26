@@ -1,3 +1,11 @@
+import { Box } from "@chakra-ui/react";
+import { Header } from "./header";
+
 export const ErrorPage = () => {
-    return <div>Si è verificato un errore</div>
-}
+  return (
+    <>
+      <Header />
+      <Box>Si è verificato un errore</Box>
+    </>
+  );
+};
