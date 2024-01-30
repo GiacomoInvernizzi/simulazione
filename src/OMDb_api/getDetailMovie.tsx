@@ -1,12 +1,12 @@
 import axios from "axios";
 
-export const getDetailMovies = (id: string) => {
-  axios
-    .get("http://www.omdbapi.com/?i=" + id + "&apikey=c24db976")
-    .then(function (response) {
-      return response;
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+export const getDetailMovies = async (id: string) => {
+  try {
+    const response = await axios.get(
+      "http://www.omdbapi.com/?i=" + id + "&apikey=c24db976"
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Errore nella richiesta dei dettagli film:", error);
+  }
 };

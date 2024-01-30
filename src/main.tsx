@@ -2,7 +2,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { DetailPage } from "./routes/detail-page";
+import { DetailPage, loader as DetailMovieLoader } from "./routes/detail-page";
 import { ErrorPage } from "./routes/error-page";
 import { Homepage, loader as MoviesLoader } from "./routes/homepage";
 import { Header } from "./routes/header";
@@ -21,6 +21,7 @@ const router = createBrowserRouter([
       {
         path: "detail",
         element: <DetailPage />,
+        loader: DetailMovieLoader,
       },
     ],
   },
